@@ -62,3 +62,4 @@ OVERLAYFS_ETC_DEVICE = "/dev/null"
 python create_overlayfs_etc_preinit:append() {
     os.unlink(preinitPath)
 }
+OBMC_IMAGE_EXTRA_INSTALL:append:qemux86-64= " helloworld"
