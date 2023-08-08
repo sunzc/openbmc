@@ -32,8 +32,9 @@ PACKAGECONFIG ??= ""
 PACKAGECONFIG[insecure-redfish-expand]="-Dinsecure-enable-redfish-query=enabled"
 
 EXTRA_OEMESON = " \
-    --buildtype=minsize \
+    --buildtype=debug \
     -Dtests=${@bb.utils.contains('PTEST_ENABLED', '1', 'enabled', 'disabled', d)} \
+    -Dbmcweb-logging=enabled \
 "
 
 do_install_ptest() {
